@@ -6,6 +6,7 @@ import App from "./App";
 import Substitution from "./routes/Substitution";
 import Ceasar from "./routes/Ceasar";
 import Affine from "./routes/Affine";
+import Hill from "./routes/Hill";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -15,6 +16,7 @@ root.render(
         <Route path="substitution" element={<Substitution />} />
         <Route path="ceasar" element={<Ceasar />} />
         <Route path="affine" element={<Affine />} />
+        <Route path="hill" element={<Hill />} />
       </Route>
     </Routes>
   </BrowserRouter>

@@ -52,25 +52,21 @@ function Ceasar() {
         <div className='grid grid-cols-2 gap-4 pt-20'>
             <div >
                 <h1 className='text-white font-bold text-5xl mb-16'>Application</h1>
-                
-            
                 <div className='grid grid-cols-4 gap-6'>
                     <div>
-                        <h3 className='text-white font-bold text-right mb-8'>Plain Text</h3>
+                        <h3 className='text-white font-bold text-right mb-28'>Plain Text</h3>
                         <h3 className='text-white font-bold text-right mb-24'>Shift</h3>
                         <h3 className='text-white font-bold text-right'>Chipher</h3>
                     </div>
-                    <div>
-                        <input className="bg-transparent border-white border-2 rounded-lg text-white p-2 mb-2" type="text" value={plainText} onChange={e => setPlainText(e.target.value)}/>
-                        <input className="bg-transparent border-white border-2 rounded-lg text-white p-2 my-2" type="number" value={shift} onChange={e => setShift(e.target.value)}/>
-                        <div className='flex text-center pl-2 space-x-4 py-2'>
-                            <button className='bg-white text-gray-700 p-3 rounded-lg font-bold' onClick={encrypt} >Encrypt</button>
-                            <button className='bg-gray-800 text-white p-3 rounded-lg font-bold' onClick={decrypt} >Decrypt</button>
-                        </div>
-                        <textarea className="bg-transparent border-white border-2 rounded-lg text-white p-2" cols={23} rows="4" type="text" value={chipher} onChange={e => setChipher(e.target.value)}/>
-                    </div>
-                    <div></div>
-                    <div></div>
+                <div>
+                <textarea className="bg-transparent border-white border-2 rounded-lg text-white p-2 "  id="p" name="p" rows="4" cols="50" spellCheck="false" value={plainText} onChange={event => setPlainText(event.target.value)} >defend the east wall of the castle</textarea>
+                <input className="bg-transparent border-white border-2 rounded-lg text-white p-2 my-2 w-[408px] " type="number" value={shift} onChange={e => setShift(e.target.value)}/>
+                <div className='flex text-center  space-x-4 py-2'>
+                    <button className='bg-white text-gray-700 p-3 rounded-lg font-bold' onClick={encrypt} >Encrypt</button>
+                    <button className='bg-gray-800 text-white p-3 rounded-lg font-bold' onClick={decrypt} >Decrypt</button>
+                </div>
+                <textarea className="bg-transparent border-white border-2 rounded-lg text-white p-2 mt-2" rows="4" cols="50" spellCheck="false"  type="text" value={chipher} onChange={e => setChipher(e.target.value)}/>
+                </div>
                 </div>
             </div>
             <div>
@@ -80,7 +76,10 @@ function Ceasar() {
                 </p>
             </div>
         </div>
+        
+
     </div>
+
     )
 }
 
