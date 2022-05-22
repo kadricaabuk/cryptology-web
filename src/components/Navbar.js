@@ -3,7 +3,7 @@ import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
 import { Link } from 'react-router-dom'
-import logo from "../assets/logo-01.png";
+import logo from "../assets/logo2.png";
 
 const navigation = [
     { name: 'Anasayfa', href: '/', current: true },
@@ -38,12 +38,12 @@ export default function Example() {
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex-shrink-0 flex items-center">
                   <img
-                    className="block lg:hidden h-16 w-auto"
+                    className="block lg:hidden h-12 w-auto"
                     alt="Workflow"
                     src={logo}
                   />
                   <img
-                    className="hidden lg:block h-16 w-auto"
+                    className="hidden lg:block h-12 w-auto"
                     src={logo}
                     alt="Workflow"
                   />
@@ -56,7 +56,7 @@ export default function Example() {
                         key={item.name}
                         className={classNames(
                           'text-gray-300 hover:bg-gray-700 hover:text-white',
-                          'px-3 py-2 rounded-md text-sm font-medium mt-3'
+                          'px-3 py-2 rounded-md text-sm font-medium mt-2'
                         )}
                         aria-current={item.current ? 'page' : undefined}
                       >
