@@ -3,7 +3,7 @@ import { Fragment } from 'react'
 import { Disclosure } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import { Link } from 'react-router-dom'
-import logo from "../assets/logo2.png";
+import logo from "../assets/logo.png";
 
 const navigation = [
     { name: 'Homepage', href: '/', current: true },

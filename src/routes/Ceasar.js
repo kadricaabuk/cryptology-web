@@ -49,9 +49,12 @@ function Ceasar() {
     return (
     
     <div>
-        <div className='grid grid-cols-2 gap-4 pt-20'>
+         <div className='row border-b-2'>
+        <h3 className='text-white font-bold text-5xl mt-10'>Ceasar Chipher</h3>
+        </div>
+        <div className='grid grid-cols-2 gap-4 pt-10'>
             <div >
-                <h1 className='text-white font-bold text-5xl mb-16'>Application</h1>
+                <h1 className='text-white font-bold text-3xl mb-16'>Application</h1>
                 <div className='grid grid-cols-4 gap-6'>
                     <div>
                         <h3 className='text-white font-bold text-right mb-28'>Plain Text</h3>
@@ -70,7 +73,7 @@ function Ceasar() {
                 </div>
             </div>
             <div>
-                <h1 className='text-white font-bold text-5xl mb-16'>Information</h1>
+                <h1 className='text-white font-bold text-3xl mb-16'>Information</h1>
                 <p className='text-white  text-base'>
                 It is named after Julius Caesar, who, according to Suetonius (Rome's most notable historian and biographer), used it with three slips to protect messages of military importance. Although Ceasar is the first recorded use of this scheme, similar types of ciphers are known to have been used before. <br/>
                 Today, the Caesar Cipher Method is not preferred very often. Because even if it was safe at the time, the probability of decryption is 1/25 now.<br/>

@@ -45,9 +45,12 @@ function Permutation() {
   
   return (
     <>
-      <div className='grid grid-cols-2 gap-4 pt-20'>
+        <div className='row border-b-2'>
+        <h3 className='text-white font-bold text-5xl mt-10'>Permutation Chipher</h3>
+        </div>
+      <div className='grid grid-cols-2 gap-4 pt-10'>
         <div >
-        <h1 className='text-white font-bold text-5xl mb-16'>Application</h1>
+        <h1 className='text-white font-bold text-3xl mb-16'>Application</h1>
         <div className='grid grid-cols-4 gap-6'>
                   <div>
                       <h3 className='text-white font-bold text-right mb-28'>Plain Text</h3>
@@ -72,7 +75,7 @@ function Permutation() {
               
         </div>
         <div>
-          <h1 className='text-white font-bold text-5xl mb-16'>Information</h1>
+          <h1 className='text-white font-bold text-3xl mb-16'>Information</h1>
           <p className='text-white  text-base'>
           Shift is the simplest encryption algorithm used. All possible possible number of keys can be up to 26. Of the 26 possible solutions, the key is easiest to find and the 46 most hassle-free can be found through an extensive key search. <br/><br/> Wide key search can also be called Brute Force here. In this method, on average, the key is found in 26/2 steps. This means that with today's technology, it will only take a few minutes to perform cryptanalysis. For example, let our cleartext be “CRYPTOSYSTEM” and our key is K=7. Then our ciphertext becomes: JYFWAVZFZALT.
           </p>

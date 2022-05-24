@@ -66,9 +66,12 @@ function Substitution(){
   
     return (
       <>
-        <div className='grid grid-cols-2 gap-4 pt-20'>
+              <div className='row border-b-2'>
+        <h3 className='text-white font-bold text-5xl mt-10'>Substitution Chipher</h3>
+        </div>
+        <div className='grid grid-cols-2 gap-4 pt-10'>
           <div >
-          <h1 className='text-white font-bold text-5xl mb-16'>Application</h1>
+          <h1 className='text-white font-bold text-3xl mb-16'>Application</h1>
           <div className='grid grid-cols-4 gap-6'>
                     <div>
                         <h3 className='text-white font-bold text-right mb-28'>Plain Text</h3>
@@ -96,7 +99,7 @@ function Substitution(){
                 
           </div>
           <div>
-                <h1 className='text-white font-bold text-5xl mb-16'>Information</h1>
+                <h1 className='text-white font-bold text-3xl mb-16'>Information</h1>
                 <p className='text-white  text-base'>
                   The purpose of substitution encryption is to replace each character in an alphabet with a different character from the same alphabet. There is no rule about which character will replace which one. It can be chosen randomly. There are two types of substitution methods. These are the Monoalphabetic Substitution and Polyalphabetic Substitution methods. Single Alphabetical Substitution is defined as encoding each letter in the alphabet with the same letter each time. With Multiple Alphabetic Substitution, not every letter in the alphabet is encrypted with the same letter each time, so a single set of plaintext alphabets will not match a single set of ciphertext alphabets.
                   <br/> <br/>

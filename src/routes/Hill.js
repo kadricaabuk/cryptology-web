@@ -92,10 +92,12 @@ const Hill = () => {
 
   return (
     <>    
-
-        <div className='grid grid-cols-2 gap-4 pt-20'>
+        <div className='row border-b-2'>
+        <h3 className='text-white font-bold text-5xl mt-10'>Hill Chipher</h3>
+        </div>
+        <div className='grid grid-cols-2 gap-4 pt-10'>
             <div >
-                <h1 className='text-white font-bold text-5xl mb-16'>Application</h1>
+                <h1 className='text-white font-bold text-3xl mb-16'>Application</h1>
                 <div className='grid grid-cols-4 gap-6'>
                     <div>
                         <h3 className='text-white font-bold text-right mb-28'>Plain Text</h3>
@@ -116,7 +118,7 @@ const Hill = () => {
                 </div>
             </div>
             <div>
-                <h1 className='text-white font-bold text-5xl mb-16'>Information</h1>
+                <h1 className='text-white font-bold text-3xl mb-16'>Information</h1>
                 <p className='text-white  text-base'>
                 The Hill Cipher, discovered and used by Lester Hill in 1929, is a block cipher. In this encrypbrtion method, the encryption process is carried out by separating the plain text into blocks.<br/><br/>
                 In Hill encryption, a matrix of coefficients is used as the encryption key. Our key space consists of mxm reversible matrices in the Zn^m ring, with n letters of the alphabet we are working with and block length m. Multiplying our key, which is the mxm matrix, by the row matrix corresponding to the numerical values of the letters in the plaintext, we obtain the row matrix corresponding to the numerical values of the ciphertext. This process is applied to all blocks to obtain the ciphertext.<br/><br/>

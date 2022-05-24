@@ -51,10 +51,13 @@ function Affine() {
     
   return (
     <>  
-
-        <div className='grid grid-cols-2 gap-4 pt-20'>
+        
+        <div className='row border-b-2'>
+        <h3 className='text-white font-bold text-5xl mt-10'>Affine Chipher</h3>
+        </div>
+        <div className='grid grid-cols-2 gap-4 mt-10'>
             <div >
-                <h1 className='text-white font-bold text-5xl mb-16'>Application</h1>
+                <h1 className='text-white font-bold text-3xl mb-16'>Application</h1>
                 <div className='grid grid-cols-4 gap-6'>
                     <div>
                         <h3 className='text-white font-bold text-right mb-28 mt-1'>Plain Text</h3>
@@ -75,7 +78,7 @@ function Affine() {
                 </div>
             </div>
             <div>
-                <h1 className='text-white font-bold text-5xl mb-16'>Information</h1>
+                <h1 className='text-white font-bold text-3xl mb-16'>Information</h1>
                 <p className='text-white  text-base'>
                     The purpose of this encryption method is to use the linear function y=ax+b, which is known as the equation of the line in geometry, in the encryption process. Accordingly, x denotes the message to be encrypted (plain text), y denotes the encrypted message (cipher text), and the pair a and b form the key. <br/>
                     <strong>Encryption function for a single letter E(x) = (ax+b) mod m <br/></strong>
