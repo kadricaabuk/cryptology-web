@@ -4,7 +4,7 @@ import GenerateIcon from '../components/icons/GenerateIcon'
 
 
 function Substitution(){
-    const [plainText, setPlainText] = useState('selam');
+    const [plainText, setPlainText] = useState('Hello World!');
     const [chipherText, setChipherText] = useState('sdafsfada');
     const [key, setKey] = useState('qzprbcoifyvejthkasdgwnlxmu');
         
@@ -98,7 +98,10 @@ function Substitution(){
           <div>
                 <h1 className='text-white font-bold text-5xl mb-16'>Information</h1>
                 <p className='text-white  text-base'>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rhoncus convallis tortor, id volutpat sem. Donec ut sapien vel augue lacinia condimentum non a magna. Fusce nec mauris sit amet tortor ornare congue. Curabitur at rutrum justo. Morbi id rutrum velit, pulvinar pharetra ligula. Nunc faucibus tellus libero, in volutpat turpis placerat sit amet. In ut mi eros. Nullam at enim metus. Phasellus eget purus ligula. Phasellus sed leo pulvinar, dictum odio eu, dictum velit. Mauris quis purus id magna tempus finibus. Cras volutpat imperdiet ante, vitae pulvinar tellus consequat sed. Cras vehicula tortor sit amet lectus ultrices lacinia. Quisque aliquet suscipit dictum.
+                  The purpose of substitution encryption is to replace each character in an alphabet with a different character from the same alphabet. There is no rule about which character will replace which one. It can be chosen randomly. There are two types of substitution methods. These are the Monoalphabetic Substitution and Polyalphabetic Substitution methods. Single Alphabetical Substitution is defined as encoding each letter in the alphabet with the same letter each time. With Multiple Alphabetic Substitution, not every letter in the alphabet is encrypted with the same letter each time, so a single set of plaintext alphabets will not match a single set of ciphertext alphabets.
+                  <br/> <br/>
+                  In cryptanalysis, on the other hand, substitution encryption is a weak method against frequency analysis. A brute-force attack can be done by extracting the keyspace of the encryption system.
+      
                 </p>
             </div>
         </div>

@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 function Ceasar() {
 
-    const [plainText, setPlainText] = useState('ATTACKATONCE');
+    const [plainText, setPlainText] = useState('Hello World!');
     const [shift, setShift] = useState(4);
     const [chipher, setChipher] = useState();
 
@@ -72,7 +72,19 @@ function Ceasar() {
             <div>
                 <h1 className='text-white font-bold text-5xl mb-16'>Information</h1>
                 <p className='text-white  text-base'>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rhoncus convallis tortor, id volutpat sem. Donec ut sapien vel augue lacinia condimentum non a magna. Fusce nec mauris sit amet tortor ornare congue. Curabitur at rutrum justo. Morbi id rutrum velit, pulvinar pharetra ligula. Nunc faucibus tellus libero, in volutpat turpis placerat sit amet. In ut mi eros. Nullam at enim metus. Phasellus eget purus ligula. Phasellus sed leo pulvinar, dictum odio eu, dictum velit. Mauris quis purus id magna tempus finibus. Cras volutpat imperdiet ante, vitae pulvinar tellus consequat sed. Cras vehicula tortor sit amet lectus ultrices lacinia. Quisque aliquet suscipit dictum.
+                It is named after Julius Caesar, who, according to Suetonius (Rome's most notable historian and biographer), used it with three slips to protect messages of military importance. Although Ceasar is the first recorded use of this scheme, similar types of ciphers are known to have been used before. <br/>
+                Today, the Caesar Cipher Method is not preferred very often. Because even if it was safe at the time, the probability of decryption is 1/25 now.<br/>
+                <strong>An encrypted message can be created by moving each letter in the main message forward by the key number specified in the message. In order to read the encrypted message, it is necessary to take each letter in the message back as much as the number of keys.<br/></strong>
+                If we want to encrypt a word with Caesar encryption, the steps we need to follow are as follows:<br/>
+                The order of each letter in the word in the alphabet is determined.<br/>
+                Each letter in the original text is "wrapped" by the amount specified as the key, and the ciphertext is obtained.<br/>
+                If the total number of letters is exceeded during scrolling, the mode is taken according to the alphabet length.
+                <br/><br/>
+                Encryption: <strong>C = P + K (mod 26)</strong> <br/>
+                C: Cipher Text <br/>
+                P: Plain Text <br/>
+                K: Key
+
                 </p>
             </div>
         </div>

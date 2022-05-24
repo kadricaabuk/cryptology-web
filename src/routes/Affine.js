@@ -77,7 +77,12 @@ function Affine() {
             <div>
                 <h1 className='text-white font-bold text-5xl mb-16'>Information</h1>
                 <p className='text-white  text-base'>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rhoncus convallis tortor, id volutpat sem. Donec ut sapien vel augue lacinia condimentum non a magna. Fusce nec mauris sit amet tortor ornare congue. Curabitur at rutrum justo. Morbi id rutrum velit, pulvinar pharetra ligula. Nunc faucibus tellus libero, in volutpat turpis placerat sit amet. In ut mi eros. Nullam at enim metus. Phasellus eget purus ligula. Phasellus sed leo pulvinar, dictum odio eu, dictum velit. Mauris quis purus id magna tempus finibus. Cras volutpat imperdiet ante, vitae pulvinar tellus consequat sed. Cras vehicula tortor sit amet lectus ultrices lacinia. Quisque aliquet suscipit dictum.
+                    The purpose of this encryption method is to use the linear function y=ax+b, which is known as the equation of the line in geometry, in the encryption process. Accordingly, x denotes the message to be encrypted (plain text), y denotes the encrypted message (cipher text), and the pair a and b form the key. <br/>
+                    <strong>Encryption function for a single letter E(x) = (ax+b) mod m <br/></strong>
+                    Where m is the size of the alphabet. The value a must be chosen so that a and m are prime between them. <br/> <strong> Deciphering; D(x) = a -1 (xb) mod m </strong><br/>
+                    Here a -1 is the modular product inverse of a modulo m. <br/>
+                    If cryptoanalysis of the cipher can discover the plaintext of the ciphertext character (frequency analysis, brute force, guess or otherwise), the key is obtained by solving a simultaneous equation.
+
                 </p>
             </div>
         </div>

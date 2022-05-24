@@ -118,7 +118,16 @@ const Hill = () => {
             <div>
                 <h1 className='text-white font-bold text-5xl mb-16'>Information</h1>
                 <p className='text-white  text-base'>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rhoncus convallis tortor, id volutpat sem. Donec ut sapien vel augue lacinia condimentum non a magna. Fusce nec mauris sit amet tortor ornare congue. Curabitur at rutrum justo. Morbi id rutrum velit, pulvinar pharetra ligula. Nunc faucibus tellus libero, in volutpat turpis placerat sit amet. In ut mi eros. Nullam at enim metus. Phasellus eget purus ligula. Phasellus sed leo pulvinar, dictum odio eu, dictum velit. Mauris quis purus id magna tempus finibus. Cras volutpat imperdiet ante, vitae pulvinar tellus consequat sed. Cras vehicula tortor sit amet lectus ultrices lacinia. Quisque aliquet suscipit dictum.
+                The Hill Cipher, discovered and used by Lester Hill in 1929, is a block cipher. In this encrypbrtion method, the encryption process is carried out by separating the plain text into blocks.<br/><br/>
+                In Hill encryption, a matrix of coefficients is used as the encryption key. Our key space consists of mxm reversible matrices in the Zn^m ring, with n letters of the alphabet we are working with and block length m. Multiplying our key, which is the mxm matrix, by the row matrix corresponding to the numerical values of the letters in the plaintext, we obtain the row matrix corresponding to the numerical values of the ciphertext. This process is applied to all blocks to obtain the ciphertext.<br/><br/>
+                Encryption function, with K being our key; <br/>
+                <strong>E := e_k (x_1, x_2, …, x_m) =(x_1,…,x_m) * K , x_i € Z_26</strong>
+                <br/><br/>
+
+                Decyrption function;<br/>
+                <strong>D := d_k(y_1,…,y_m) = (y_1,…,y_m) * K -1	, y_i € Z_26</strong><br/><br/>
+                The Hill cipher is quite difficult to crack with a known ciphertext attack. On the other hand, it shows weakness in cases where the plain text is also known.
+
                 </p>
             </div>
         </div>

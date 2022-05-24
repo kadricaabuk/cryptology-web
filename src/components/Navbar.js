@@ -11,6 +11,7 @@ const navigation = [
     { name: 'Ceasar', href: '/ceasar', current: false },
     { name: 'Substitution', href: '/substitution', current: false },
     { name: 'Hill', href: '/hill', current: false },
+    { name: 'Permutation', href: '/permutation', current: false },
 ]
 
 function classNames(...classes) {
