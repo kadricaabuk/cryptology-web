@@ -8,12 +8,14 @@ import Ceasar from "./routes/Ceasar";
 import Affine from "./routes/Affine";
 import Hill from "./routes/Hill";
 import Permutation from "./routes/Permutation";
+import About from "./routes/About";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />}>
+        <Route path="about" element={<About />} />
         <Route path="substitution" element={<Substitution />} />
         <Route path="ceasar" element={<Ceasar />} />
         <Route path="affine" element={<Affine />} />

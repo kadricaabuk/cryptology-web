@@ -7,7 +7,7 @@ function Affine() {
     const [plainText, setPlainText] = useState('Hello World!');
     const [cipherText, setCipher] = useState();
     
-    const ALPHA = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N', 'O', 'P', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+    const ALPHA = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 
     const encrypt = () => {
         let result = '';
@@ -20,11 +20,9 @@ function Affine() {
             console.log(index)
             let resIndex = parseInt(a*(index+1))+parseInt(b)
             console.log(resIndex)
-            result += ALPHA[(resIndex-1)%26]
+            result += ALPHA[(resIndex-3)%26]
             console.log(result)
             }
-                //Şifreli mesajın oluşuturulması: b harfi için 2. harf olduğu kabul edilirse,
-                //3×2 + 2 = 8 olarak bulunur yani karşılığı allfabenin 8. harfidir. Bu harf ‘h’ harfidir. 
         }
         setCipher(result)
     }
@@ -36,15 +34,13 @@ function Affine() {
             if(element === ' '){
                 result += ' ';
             }else{
-            let index = ALPHA.indexOf(element);
+            let index = ALPHA.indexOf(element.toUpperCase());
             console.log(index)
-            let resIndex = parseInt(Math.pow(a,-1)*(index+1-parseInt(b)))
+            let resIndex = (Math.pow(a,-1))*((index+1)-parseInt(b))
             console.log(resIndex)
-            result += ALPHA[(resIndex-1)%26]
+            result += ALPHA[(resIndex-3)%26]
             console.log(result)
             }
-                //Şifreli mesajın oluşuturulması: b harfi için 2. harf olduğu kabul edilirse,
-                //3×2 + 2 = 8 olarak bulunur yani karşılığı allfabenin 8. harfidir. Bu harf ‘h’ harfidir. 
         }
         setPlainText(result)
     }
@@ -89,27 +85,6 @@ function Affine() {
                 </p>
             </div>
         </div>
-
-{/* 
-        <div className='flex space-x-4 p-3 items-center'>
-            <h3 className='text-white font-bold'>Word</h3>
-            <input className="bg-transparent border-white border-2 rounded-lg text-white p-2" type="text" value={word} onChange={e => setWord(e.target.value)} />  
-        </div>
-
-        <div className='flex space-x-4 p-3 items-center'>
-        <h3 className='text-white font-bold'>A</h3>
-        <input className="bg-transparent border-white border-2 rounded-lg text-white p-2" type="number" value={a} onChange={e => setA(e.target.value)}/>
-        </div>
-        <div className='flex space-x-4 p-3 items-center'>
-        <h3 className='text-white font-bold'>B</h3>
-        <input className="bg-transparent border-white border-2 rounded-lg text-white p-2" type="number" value={b} onChange={e => setB(e.target.value)}/>
-        </div>
-        <div className='flex space-x-4 p-3 items-center'>
-            <button className='bg-white text-gray-700 p-3 rounded-lg font-bold' onClick={encrypt} >Encrypt</button>
-            <button className='bg-gray-800 text-white p-3 rounded-lg font-bold' onClick={decrypt} >Decrypt</button>
-        </div> */}
-        {/* <h3>cipher</h3> */}
-        {/* <input type="text" value={cipher} onChange={e => setCipher(e.target.value)}/> */}
     </>
   )
 }
