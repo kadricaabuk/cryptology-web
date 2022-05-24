@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 import logo from "../assets/logo2.png";
 
 const navigation = [
-    { name: 'Anasayfa', href: '/', current: true },
+    { name: 'Homepage', href: '/', current: true },
     { name: 'Affine', href: '/affine', current: false },
     { name: 'Ceasar', href: '/ceasar', current: false },
     { name: 'Substitution', href: '/substitution', current: false },
@@ -55,11 +55,19 @@ export default function Example() {
                       <Link
                         to={item.href}
                         key={item.name}
+                        onClick={() => {
+                          navigation.forEach(i => {
+                            item.name !== i.name ? i.current=false : i.current=true
+                          });
+                        }
+                        
+                      }
                         className={classNames(
                           'text-gray-300 hover:bg-gray-700 hover:text-white',
-                          'px-3 py-2 rounded-md text-sm font-medium mt-2'
+                          'px-3 py-2 rounded-md text-sm  mt-2 ',
+                          ` ${item.current===true ? "font-black" : "font-medium"}`
                         )}
-                        aria-current={item.current ? 'page' : undefined}
+                        
                       >
                         {item.name}
                       </Link>

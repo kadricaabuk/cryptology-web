@@ -8,7 +8,7 @@ console.log(x);
 
 
 const Hill = () => {
-    const [plainText, setPlainText] = useState('');
+    const [plainText, setPlainText] = useState('Hello World!');
     const [keyText, setKeyText] = useState('');
     const [blockSize, setBlockSize] = useState();
     const [cipherText, setCipherText] = useState('');

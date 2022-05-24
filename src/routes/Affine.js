@@ -4,8 +4,8 @@ function Affine() {
 
     const [a, setA] = useState();
     const [b, setB] = useState();
-    const [plainText, setPlainText] = useState();
-    const [chipherText, setChipher] = useState();
+    const [plainText, setPlainText] = useState('Hello World!');
+    const [cipherText, setCipher] = useState();
     
     const ALPHA = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N', 'O', 'P', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 
@@ -26,13 +26,13 @@ function Affine() {
                 //Şifreli mesajın oluşuturulması: b harfi için 2. harf olduğu kabul edilirse,
                 //3×2 + 2 = 8 olarak bulunur yani karşılığı allfabenin 8. harfidir. Bu harf ‘h’ harfidir. 
         }
-        setChipher(result)
+        setCipher(result)
     }
 
     const decrypt = () => {
         let result = '';
-        for (let i = 0; i < chipherText.length; i++) {
-            const element = chipherText[i];
+        for (let i = 0; i < cipherText.length; i++) {
+            const element = cipherText[i];
             if(element === ' '){
                 result += ' ';
             }else{
@@ -60,7 +60,7 @@ function Affine() {
                         <h3 className='text-white font-bold text-right mb-28 mt-1'>Plain Text</h3>
                         <h3 className='text-white font-bold text-right mb-8'>A</h3>
                         <h3 className='text-white font-bold text-right mb-24'>B</h3>
-                        <h3 className='text-white font-bold text-right'>Chipher</h3>
+                        <h3 className='text-white font-bold text-right'>Cipher</h3>
                     </div>
                 <div>
                 <textarea className="bg-transparent border-white border-2 rounded-lg text-white p-2 "  id="p" name="p" rows="4" cols="50" spellCheck="false" value={plainText} onChange={event => setPlainText(event.target.value)} />
@@ -70,7 +70,7 @@ function Affine() {
                     <button className='bg-white text-gray-700 p-3 rounded-lg font-bold' onClick={encrypt} >Encrypt</button>
                     <button className='bg-gray-800 text-white p-3 rounded-lg font-bold' onClick={decrypt} >Decrypt</button>
                 </div>
-                <textarea className="bg-transparent border-white border-2 rounded-lg text-white p-2 mt-2" rows="4" cols="50" spellCheck="false"  type="text" value={chipherText} onChange={e => setChipher(e.target.value)}/>
+                <textarea className="bg-transparent border-white border-2 rounded-lg text-white p-2 mt-2" rows="4" cols="50" spellCheck="false"  type="text" value={cipherText} onChange={e => setCipher(e.target.value)}/>
                 </div>
                 </div>
             </div>
@@ -105,8 +105,8 @@ function Affine() {
             <button className='bg-white text-gray-700 p-3 rounded-lg font-bold' onClick={encrypt} >Encrypt</button>
             <button className='bg-gray-800 text-white p-3 rounded-lg font-bold' onClick={decrypt} >Decrypt</button>
         </div> */}
-        {/* <h3>chipher</h3> */}
-        {/* <input type="text" value={chipher} onChange={e => setChipher(e.target.value)}/> */}
+        {/* <h3>cipher</h3> */}
+        {/* <input type="text" value={cipher} onChange={e => setCipher(e.target.value)}/> */}
     </>
   )
 }

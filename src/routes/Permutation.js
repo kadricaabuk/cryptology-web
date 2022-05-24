@@ -2,16 +2,16 @@ import React, { useState } from 'react'
 
 function Permutation() {
   const [cipherText, setCipherText] = useState('');
-  const [plainText, setPlainText] = useState('');
+  const [plainText, setPlainText] = useState('Hello World!');
   const [key, setKey] = useState('');
 
   const Encrypt = () => {
     const keyLength = key.length;
+
     let newTxt = '';
     for (let i = 0; i < plainText.length; i += keyLength) {
       let cipherBlock = plainText.slice(i, i + keyLength);
       let newStrArr = []
-      /* console.log(cipherBlock) */
       for (let j = 0; j < keyLength; j++) {
         newStrArr.splice(j, 0, cipherBlock[Number(key[j]) - 1]);
       }
@@ -30,11 +30,10 @@ function Permutation() {
       let newStrArr = []
   
       for (let j = 0; j < keyLength; j++) {
-        console.log(key[j])
+
         newStrArr.splice(Number(key[j]) - 1, 0, cipherBlock[j]);        
         
       }
-      console.log(newStrArr);
       let newStr = newStrArr.join('');
       
       newTxt += newStr;
@@ -45,7 +44,6 @@ function Permutation() {
 
   
   return (
-
     <>
       <div className='grid grid-cols-2 gap-4 pt-20'>
         <div >
@@ -54,7 +52,7 @@ function Permutation() {
                   <div>
                       <h3 className='text-white font-bold text-right mb-28'>Plain Text</h3>
                       <h3 className='text-white font-bold text-right mb-24'>Key</h3>
-                      <h3 className='text-white font-bold text-right'>Chipher</h3>
+                      <h3 className='text-white font-bold text-right'>Cipher Text</h3>
                   </div>
                   <div>
                   <textarea className="bg-transparent border-white border-2 rounded-lg text-white p-2 mb-2"  id="p" name="p" rows="4" cols="50" spellCheck="false" value={plainText} onChange={event => setPlainText(event.target.value)} >defend the east wall of the castle</textarea>
