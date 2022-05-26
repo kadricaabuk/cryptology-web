@@ -6,15 +6,6 @@ import { Link } from 'react-router-dom'
 import logo from "../assets/logo-01.png";
 import DropdownRender from './Dropdown';
 
-// const navigation = [
-//     { name: 'Homepage', href: '/', current: true },
-//     { name: 'Affine', href: '/affine', current: false },
-//     { name: 'Ceasar', href: '/ceasar', current: false },
-//     { name: 'Substitution', href: '/substitution', current: false },
-//     { name: 'Hill', href: '/hill', current: false },
-//     { name: 'Permutation', href: '/permutation', current: false },
-// ]
-
 const navigation = [
   { name: 'Homepage', href: '/', current: true },
   { name: 'About', href: '/about', current: true },
