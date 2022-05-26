@@ -1,7 +1,6 @@
 import React from 'react'
 import logo from "../assets/logo-half.png";
 
-const str = "The 'Decypher Project', prepared by the senior students of Hacettepe University, aims to provide information about Cryptology and Cryptology Methods."
 const About = () => {
   return (
     <div className='w-full h-[400px] flex items-center justify-center mt-[200px]'>
