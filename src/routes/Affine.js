@@ -20,7 +20,7 @@ function Affine() {
             console.log(index)
             let resIndex = parseInt(a*(index+1))+parseInt(b)
             console.log(resIndex)
-            result += ALPHA[(resIndex-3)%26]
+            result += ALPHA[(resIndex-2)%26]
             console.log(result)
             }
         }
@@ -38,7 +38,7 @@ function Affine() {
             console.log(index)
             let resIndex = (Math.pow(a,-1))*((index+1)-parseInt(b))
             console.log(resIndex)
-            result += ALPHA[(resIndex-3)%26]
+            result += ALPHA[(resIndex-2)%26]
             console.log(result)
             }
         }

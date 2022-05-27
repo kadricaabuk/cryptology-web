@@ -10,6 +10,7 @@ import Hill from "./routes/Hill";
 import Permutation from "./routes/Permutation";
 import About from "./routes/About";
 import Homepage from "./routes/Homepage";
+import Vigenere from "./routes/Vigenere";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -23,6 +24,7 @@ root.render(
         <Route path="affine" element={<Affine />} />
         <Route path="hill" element={<Hill />} />
         <Route path="permutation" element={<Permutation />} />
+        <Route path="vigenere" element={<Vigenere />} />
       </Route>
     </Routes>
   </BrowserRouter>

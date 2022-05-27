@@ -8,6 +8,7 @@ const navigation = [
     { name: 'Substitution Chipher', href: '/substitution', current: false },
     { name: 'Hill Chipher', href: '/hill', current: false },
     { name: 'Permutation Chipher', href: '/permutation', current: false },
+    { name: 'Autokey Vigenere Chipher', href: '/vigenere', current: false },
 ]
   
 

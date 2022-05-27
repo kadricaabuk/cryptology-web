@@ -1,44 +1,45 @@
-import React from 'react'
-import { useState } from 'react';
+import React, { useState } from 'react'
 
-function Ceasar() {
-
+export const Vigenere = () => {
+    
     const [plainText, setPlainText] = useState('Hello World!');
-    const [shift, setShift] = useState(4);
-    const [chipher, setChipher] = useState();
+    const [key, setKey] = useState('ASDAFWFWÖSLAD');
+    const [chipher, setChipher] = useState('');
 
     const ALPHA = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 
     const encrypt = () => {
-        let result=""
-        
-        for (let i = 0; i < plainText.length; i++)
-        {
-            let element = plainText[i];
-            let resIndex = parseInt(ALPHA.indexOf(element.toUpperCase()))+parseInt(shift);
-            console.log(resIndex)
-            result += ALPHA[resIndex>25 ? resIndex%25 : resIndex]
-            
+        let result = '';
+
+        for (let i = 0; i < plainText.length; i++) {
+          const element = plainText[i];
+          if(element === ' '){
+            result += ' ';
+          }else{
+            let resIndex = ALPHA.indexOf(element.toUpperCase())+ALPHA.indexOf(key[i].toUpperCase())
+            result+=ALPHA[resIndex>26 ? resIndex%26 : resIndex]
+          }
         }
-        setChipher(result)
 
-    }
+        setChipher(result);
+      }
 
-    const decrypt = () => {
-        let result=""
+      const decrypt = () => {
+        let result = '';
 
-        for (let i = 0; i < chipher.length; i++)
-        {
-            let element = chipher[i];
-            let resIndex = parseInt(ALPHA.indexOf(element.toUpperCase()))-parseInt(shift);
-            console.log(resIndex)
-            result += ALPHA[resIndex>25 ? resIndex%25 : resIndex]
-            
+        for (let i = 0; i < chipher.length; i++) {
+          const element = chipher[i];
+          if(element === ' '){
+            result += ' ';
+          }else{
+            let resIndex = ALPHA.indexOf(element.toUpperCase())-ALPHA.indexOf(key[i].toUpperCase())
+            result+=ALPHA[resIndex]
+          }
         }
-        setPlainText(result)
-    }
 
-    return (
+        setPlainText(result);
+      }
+  return (
     
     <div>
          <div className='row border-b-2'>
@@ -50,12 +51,12 @@ function Ceasar() {
                 <div className='grid grid-cols-4 gap-6'>
                     <div>
                         <h3 className='text-white font-bold text-right mb-28'>Plain Text</h3>
-                        <h3 className='text-white font-bold text-right mb-24'>Shift</h3>
+                        <h3 className='text-white font-bold text-right mb-24'>Key</h3>
                         <h3 className='text-white font-bold text-right'>Chipher</h3>
                     </div>
                 <div>
                 <textarea className="bg-transparent border-white border-2 rounded-lg text-white p-2 "  id="p" name="p" rows="4" cols="50" spellCheck="false" value={plainText} onChange={event => setPlainText(event.target.value)} >defend the east wall of the castle</textarea>
-                <input className="bg-transparent border-white border-2 rounded-lg text-white p-2 my-2 w-[408px] " type="number" value={shift} onChange={e => setShift(e.target.value)}/>
+                <input className="bg-transparent border-white border-2 rounded-lg text-white p-2 my-2 w-[408px] " type="text" value={key} onChange={e => setKey(e.target.value)}/>
                 <div className='flex text-center  space-x-4 py-2'>
                     <button className='bg-white text-gray-700 p-3 rounded-lg font-bold' onClick={encrypt} >Encrypt</button>
                     <button className='bg-gray-800 text-white p-3 rounded-lg font-bold' onClick={decrypt} >Decrypt</button>
@@ -87,7 +88,7 @@ function Ceasar() {
 
     </div>
 
-    )
+  )
 }
 
-export default Ceasar
+export default Vigenere;
