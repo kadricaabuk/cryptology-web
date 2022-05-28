@@ -10,24 +10,24 @@ export const Vigenere = () => {
 
     const encrypt = () => {
         let result = '';
-
-        for (let i = 0; i < plainText.length; i++) {
+        let emptyStringsCount = (plainText.split(" ").length - 1);
+        for (let i = 0; i < (plainText.length-emptyStringsCount); i++) {
           const element = plainText[i];
           if(element === ' '){
             result += ' ';
           }else{
             let resIndex = ALPHA.indexOf(element.toUpperCase())+ALPHA.indexOf(key[i].toUpperCase())
-            result+=ALPHA[resIndex>26 ? resIndex%26 : resIndex]
+            let res = ALPHA[resIndex>26 ? resIndex%26 : resIndex]
+            result += res;
           }
         }
-
         setChipher(result);
       }
 
       const decrypt = () => {
         let result = '';
-
-        for (let i = 0; i < chipher.length; i++) {
+        let emptyStringsCount = (chipher.split(" ").length - 1);
+        for (let i = 0; i < chipher.length-emptyStringsCount; i++) {
           const element = chipher[i];
           if(element === ' '){
             result += ' ';
@@ -39,6 +39,7 @@ export const Vigenere = () => {
 
         setPlainText(result);
       }
+
   return (
     
     <div>
@@ -68,19 +69,14 @@ export const Vigenere = () => {
             <div>
                 <h1 className='text-white font-bold text-3xl mb-16'>Information</h1>
                 <p className='text-white  text-base'>
-                It is named after Julius Caesar, who, according to Suetonius (Rome's most notable historian and biographer), used it with three slips to protect messages of military importance. Although Ceasar is the first recorded use of this scheme, similar types of ciphers are known to have been used before. <br/>
-                Today, the Caesar Cipher Method is not preferred very often. Because even if it was safe at the time, the probability of decryption is 1/25 now.<br/>
-                <strong>An encrypted message can be created by moving each letter in the main message forward by the key number specified in the message. In order to read the encrypted message, it is necessary to take each letter in the message back as much as the number of keys.<br/></strong>
-                If we want to encrypt a word with Caesar encryption, the steps we need to follow are as follows:<br/>
-                The order of each letter in the word in the alphabet is determined.<br/>
-                Each letter in the original text is "wrapped" by the amount specified as the key, and the ciphertext is obtained.<br/>
-                If the total number of letters is exceeded during scrolling, the mode is taken according to the alphabet length.
+                In the Autokey Vigenere encryption method, a part of the plaintext is also included in the encryption so that the key does not repeat itself. By bringing the keyword to the beginning, the plaintext is shifted by the keyword.
                 <br/><br/>
-                Encryption: <strong>C = P + K (mod 26)</strong> <br/>
-                C: Cipher Text <br/>
-                P: Plain Text <br/>
-                K: Key
-
+                For example, the keyword seval is:<br/>
+                <strong>Plain Text:</strong> veri guvenligi  <br/>
+                <strong>Password:</strong> seva lverguve<br/>
+                <strong>Ciphertext:</strong> öıoi sşcüysgen<br/>
+                <br/><br/>
+                We take the alphabetical order of these characters and shift each character by the alphabetic sequence number of the character in the password. For this, we can make use of the graph with the sequence numbers. In addition, we get the results of the numbers obtained when they are added according to (mod 29) in Turkish.
                 </p>
             </div>
         </div>

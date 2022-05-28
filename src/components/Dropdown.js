@@ -39,14 +39,12 @@ const Dropdown = ({ color }) => {
           <div className="relative inline-flex align-middle w-full">
             <button
               className={
-                "text-gray-300 text-md pt-4 rounded  font-bold outline-none focus:outline-none mr-1 mb-1"
+                "text-gray-300 text-md pt-4 rounded font-bold outline-none focus:outline-none mr-1 mb-1 hover:font-black "
               }
               style={{ transition: "all .15s ease" }}
               type="button"
               ref={btnDropdownRef}
-              onMouseOver={() => {
-                dropdownPopoverShow ? closeDropdownPopover() : openDropdownPopover();
-              }}
+              onMouseOver={() => openDropdownPopover()}
             >
               Methods
             </button>
@@ -58,6 +56,7 @@ const Dropdown = ({ color }) => {
                 "text-base z-50 float-left py-2 list-none text-left rounded shadow-lg mt-1"
               }
               style={{ minWidth: "12rem" }}
+              onMouseLeave={() => closeDropdownPopover()}
             >
                 {navigation.map((item) => (
                       <Link

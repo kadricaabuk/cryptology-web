@@ -12,10 +12,6 @@ function Substitution(){
       let plaintext = plainText.toLowerCase();  
       let keyText = key.toLowerCase().replace(/[^a-z]/g,""); 
   
-      if (plaintext.length < 1) {
-        alert("please enter some plaintext (letters and numbers only)");
-        return;
-      }
       if (keyText.length !== 26) {
         //alert("key must be 26 characters in length");
         return;
