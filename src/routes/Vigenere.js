@@ -44,7 +44,7 @@ export const Vigenere = () => {
     
     <div>
          <div className='row border-b-2'>
-        <h3 className='text-white font-bold text-5xl mt-10'>Ceasar Chipher</h3>
+        <h3 className='text-white font-bold text-5xl mt-10'>Autokey Vigenere Chipher</h3>
         </div>
         <div className='grid grid-cols-2 gap-4 pt-10'>
             <div >
