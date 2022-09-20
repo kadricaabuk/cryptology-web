@@ -39,7 +39,7 @@ const Dropdown = ({ color }) => {
           <div className="relative inline-flex align-middle w-full">
             <button
               className={
-                "text-gray-300 text-md pt-4 rounded font-bold outline-none focus:outline-none mr-1 mb-1 hover:font-black "
+                "text-gray-300 text-[12px] pt-4 rounded font-bold outline-none focus:outline-none mr-1 mb-1 hover:font-black "
               }
               style={{ transition: "all .15s ease" }}
               type="button"
