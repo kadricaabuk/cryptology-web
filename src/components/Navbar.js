@@ -5,7 +5,6 @@ import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import { Link } from 'react-router-dom'
 import logo from "../assets/logo-01.png";
 import DropdownRender from './Dropdown';
-
 const navigation = [
   { name: 'Homepage', href: '/', current: true },
   { name: 'About', href: '/about', current: true },
@@ -68,7 +67,7 @@ export default function Example() {
                         {item.name}
                       </Link>
                     ))}
-                    <DropdownRender/>
+                    <DropdownRender />
                   </div>
                 </div>
               </div>
