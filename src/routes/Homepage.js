@@ -1,12 +1,18 @@
 import banner from '../assets/banner.jpg'
+import Text from '../components/Text';
 
 const Homepage = () => {
     return (
-      <d>
+      <>
         <div className="p-5">
           <img className="rounded-2xl shadow-xl" src={banner} alt="" />
         </div>
-        <p className="text-white font-light text-xl p-5 pt-0">
+        <Text
+          color={"#fff"}
+          fontWeight={300}
+          fontSize={16}
+          cssClass="p-5 pt-0"
+        >
           <strong className="font-bold">Cryptology science</strong> concerned
           with data communication and storage in secure and usually secret form.
           It encompasses both cryptography and cryptanalysis. <br />
@@ -21,8 +27,8 @@ const Homepage = () => {
           not forgeable without the secret key, can be decrypted by anyone
           knowing the key either to recover the hidden information or to
           authenticate the source.
-        </p>
-      </d>
+        </Text>
+      </>
     );
   }
 
