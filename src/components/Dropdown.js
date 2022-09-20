@@ -13,6 +13,11 @@ const navigation = [
   
 
 const Dropdown = ({ color }) => {
+  
+  function classNames(...classes) {
+    return classes.filter(Boolean).join(" ");
+  }
+  
   // dropdown props
   const [dropdownPopoverShow, setDropdownPopoverShow] = React.useState(false);
   const btnDropdownRef = React.createRef();
@@ -38,9 +43,11 @@ const Dropdown = ({ color }) => {
         <div className="w-full sm:w-6/12 md:w-4/12 px-4">
           <div className="relative inline-flex align-middle w-full">
             <button
-              className={
-                "text-gray-300 text-[12px] pt-4 rounded font-bold outline-none focus:outline-none mr-1 mb-1 hover:font-black "
-              }
+              className={classNames(
+                "text-gray-300 outline-none mt-2",
+                "focus:outline-none mr-1 mb-1 hover:text-white hover:bg-gray-700",
+                "px-3 py-2 rounded-md text-[12px] font-bold"
+              )}
               style={{ transition: "all .15s ease" }}
               type="button"
               ref={btnDropdownRef}
@@ -58,15 +65,17 @@ const Dropdown = ({ color }) => {
               style={{ minWidth: "12rem" }}
               onMouseLeave={() => closeDropdownPopover()}
             >
-                {navigation.map((item) => (
-                      <Link
-                        to={item.href}
-                        key={item.name}
-                        className={'text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent hover:font-bold'}
-                      >
-                        {item.name}
-                      </Link>
-                    ))}
+              {navigation.map((item) => (
+                <Link
+                  to={item.href}
+                  key={item.name}
+                  className={
+                    "text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent hover:font-bold"
+                  }
+                >
+                  {item.name}
+                </Link>
+              ))}
             </div>
           </div>
         </div>
