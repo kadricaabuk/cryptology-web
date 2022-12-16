@@ -34,7 +34,7 @@ const MenuDropdown = ({labelText, dropdownList, setDropdownList}) => {
 
   const MenuDropdownItem = ({item}) => {
     return (
-      <div className={`pl-4 transition-all ${item.current ? "border-l-[4px] border-gray-800" : ""}`} onClick={() => updateState(item)}>
+      <div className={`${item.current ? "border-l-[4px] border-gray-800 pl-3" : "pl-4"}`} onClick={() => updateState(item)}>
         <Link to={item.href}>{item.name}</Link>
       </div>
     )
