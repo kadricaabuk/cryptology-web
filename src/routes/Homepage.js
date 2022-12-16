@@ -1,5 +1,5 @@
 import banner from '../assets/banner.jpg'
-import {Text} from "../components"
+import {Text} from "../components/Navbar"
 const Homepage = () => {
     return (
       <>

@@ -1,0 +1,22 @@
+#dropdownCollapsable{
+    display: none;
+    width: 250px;
+    
+}
+#dropdownCollapsable > div{
+    margin-top: 8px;
+    background-color: rgb(229 231 235);
+    border-radius: 8px;
+    color: rgb(31 41 55);
+    padding: 16px 16px 16px 0;
+    gap: 8px;
+    display: flex;
+    flex-direction: column;
+}
+#dropdownCollapsable.collapsed{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 100%;
+    left: 0;
+}
