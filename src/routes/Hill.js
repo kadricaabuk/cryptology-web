@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
-//import { inv } from 'mathjs';
 
 
 let x =[[5, -2, 2, 7],[1, 0, 0, 3],[-3, 1, 5, 0],[3, -1, -9, 4]];
-
-console.log(x);
 
 
 const Hill = () => {
