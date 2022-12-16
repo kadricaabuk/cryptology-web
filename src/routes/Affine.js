@@ -1,36 +1,37 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react';
 function Affine() {
 
-    const [a, setA] = useState();
-    const [b, setB] = useState();
-    const [plainText, setPlainText] = useState('Hello World!');
-    const [cipherText, setCipher] = useState();
-    
+    const [a, setA] = useState(0);
+    const [b, setB] = useState(0);
+    const [plainText, setPlainText] = useState("Hello World");
+    const [cipherText, setCipher] = useState("");
     const ALPHA = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 
+    useEffect(() => {
+        setA(parseInt(a))
+    }, [a])
+
+    useEffect(() => {
+        setB(parseInt(b))
+    }, [b])
+
     const encrypt = () => {
-        let result = '';
-        for (let i = 0; i < plainText.length; i++) {
-            const element = plainText[i];
-            if(element === ' '){
-                result += ' ';
-            }else{
-            let index = ALPHA.indexOf(element.toUpperCase());
-            console.log(index)
-            let resIndex = parseInt(a*(index+1))+parseInt(b)
-            console.log(resIndex)
-            result += ALPHA[(resIndex-2)%26]
-            console.log(result)
+        let encryptedString = "";
+        for (let index = 0; index < plainText.length; index++) {
+            const element = plainText[index];
+            const indexOfElement = ALPHA.indexOf(element.toUpperCase());
+            if(element === ' ') encryptedString += element;
+            else {
+                
             }
         }
-        setCipher(result)
     }
 
     const decrypt = () => {
         let result = '';
         for (let i = 0; i < cipherText.length; i++) {
-            const element = cipherText[i];
+            const element = cipherText[i].toUpperCase();
             if(element === ' '){
                 result += ' ';
             }else{
@@ -48,11 +49,11 @@ function Affine() {
   return (
     <>  
         
-        <div className='row border-b-2'>
-        <h3 className='text-white font-bold text-5xl mt-10'>Affine Chipher</h3>
+        <div className='border-b-2'>
+            <h3 className='text-white font-bold text-5xl mt-10'>Affine Chipher</h3>
         </div>
-        <div className='grid grid-cols-2 gap-4 mt-10'>
-            <div >
+        <div className='gap-4 mt-10'>
+            <div>
                 <h1 className='text-white font-bold text-3xl mb-16'>Application</h1>
                 <div className='grid grid-cols-4 gap-6'>
                     <div>
