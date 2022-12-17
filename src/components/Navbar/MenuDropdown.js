@@ -18,9 +18,6 @@ const MenuDropdown = ({labelText, dropdownList, setDropdownList}) => {
     }
   }, [isDropdownOpen]);
 
-  useEffect(() => {
-    console.log(dropdownList);
-  }, [dropdownList])
 
   const updateState = ({id}) => {
     const newState = dropdownList.map(obj => {
@@ -34,7 +31,7 @@ const MenuDropdown = ({labelText, dropdownList, setDropdownList}) => {
 
   const MenuDropdownItem = ({item}) => {
     return (
-      <div className={`pl-4 transition-all ${item.current ? "border-l-[4px] border-gray-800" : ""}`} onClick={() => updateState(item)}>
+      <div className={`py-2 ${item.current ? "border-l-[6px] border-gray-800 pl-[10px]" : "pl-4"} pr-2 hover:bg-gray-800 hover:text-gray-200`} onClick={() => updateState(item)} style={{borderRadius: "0 5px 5px 0"}}>
         <Link to={item.href}>{item.name}</Link>
       </div>
     )
