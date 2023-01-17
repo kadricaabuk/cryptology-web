@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 function Ceasar() {
 
-    const [plainText, setPlainText] = useState('Hello World!');
+    const [plainText, setPlainText] = useState('Hello World');
     const [shift, setShift] = useState(4);
     const [chipher, setChipher] = useState("");
 

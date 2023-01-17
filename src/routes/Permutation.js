@@ -2,24 +2,18 @@ import React, { useState } from 'react'
 
 function Permutation() {
   const [cipherText, setCipherText] = useState('');
-  const [plainText, setPlainText] = useState('Hello World!');
+  const [plainText, setPlainText] = useState('Hello World');
   const [key, setKey] = useState('');
-
+  const ALPHA = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+  const ALPHA_LENGTH = ALPHA.length
   const Encrypt = () => {
-    const keyLength = key.length;
-
-    let newTxt = '';
-    for (let i = 0; i < plainText.length; i += keyLength) {
-      let cipherBlock = plainText.slice(i, i + keyLength);
-      let newStrArr = []
-      for (let j = 0; j < keyLength; j++) {
-        newStrArr.splice(j, 0, cipherBlock[Number(key[j]) - 1]);
-      }
-      let newStr = newStrArr.join('');
-      newTxt += newStr;
-    }
-
-    setCipherText(newTxt);
+    plainText.forEach((el, idx) => {
+        if(el === " "){
+          setCipherText(prev => prev+=" ")
+        }else{
+            setCipherText(prev => prev += ALPHA[ALPHA.indexOf(key[idx])])
+        }
+    })
   }
 
   const Decrypt = () => {

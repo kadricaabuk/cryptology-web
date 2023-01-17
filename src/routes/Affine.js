@@ -2,47 +2,43 @@ import React from 'react'
 import { useState } from 'react';
 function Affine() {
 
-    const [a, setA] = useState();
-    const [b, setB] = useState();
-    const [plainText, setPlainText] = useState('Hello World!');
-    const [cipherText, setCipher] = useState();
+    const [a, setA] = useState(5);
+    const [b, setB] = useState(8);
+    const [plainText, setPlainText] = useState('Hello World');
+    const [cipherText, setCipher] = useState("");
     
     const ALPHA = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+    const ALPHA_LENGTH = ALPHA.length
 
     const encrypt = () => {
-        let result = '';
+        setCipher("")
         for (let i = 0; i < plainText.length; i++) {
             const element = plainText[i];
+            const elementIndex = ALPHA.indexOf(element.toUpperCase())
             if(element === ' '){
-                result += ' ';
+                setCipher(prev => prev += " ")
             }else{
-            let index = ALPHA.indexOf(element.toUpperCase());
-            console.log(index)
-            let resIndex = parseInt(a*(index+1))+parseInt(b)
-            console.log(resIndex)
-            result += ALPHA[(resIndex-2)%26]
-            console.log(result)
+                setCipher(prev => prev += ALPHA[(((elementIndex)*a)+b)%ALPHA_LENGTH])
             }
         }
-        setCipher(result)
     }
 
     const decrypt = () => {
-        let result = '';
+        setPlainText("")
         for (let i = 0; i < cipherText.length; i++) {
             const element = cipherText[i];
+            const elementIndex = ALPHA.indexOf(element.toUpperCase())
+            const z = (ALPHA_LENGTH+1)/a
+            console.log(Math.round(z))
             if(element === ' '){
-                result += ' ';
+                setPlainText(prev => prev += " ")
             }else{
-            let index = ALPHA.indexOf(element.toUpperCase());
-            console.log(index)
-            let resIndex = (Math.pow(a,-1))*((index+1)-parseInt(b))
-            console.log(resIndex)
-            result += ALPHA[(resIndex-2)%26]
-            console.log(result)
+                let index = Math.round(z)*(elementIndex+b)
+                console.log(index)
+                console.log(ALPHA[index%ALPHA_LENGTH])
+                setPlainText(prev => prev += ALPHA[index%ALPHA_LENGTH])
             }
         }
-        setPlainText(result)
     }
     
   return (
