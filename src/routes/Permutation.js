@@ -5,7 +5,6 @@ function Permutation() {
   const [plainText, setPlainText] = useState('Hello World');
   const [key, setKey] = useState('');
   const ALPHA = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-  const ALPHA_LENGTH = ALPHA.length
   const Encrypt = () => {
     plainText.forEach((el, idx) => {
         if(el === " "){
