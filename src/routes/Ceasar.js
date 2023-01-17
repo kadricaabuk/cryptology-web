@@ -5,37 +5,42 @@ function Ceasar() {
 
     const [plainText, setPlainText] = useState('Hello World!');
     const [shift, setShift] = useState(4);
-    const [chipher, setChipher] = useState();
+    const [chipher, setChipher] = useState("");
 
     const ALPHA = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+    const ALPHA_LENGTH = ALPHA.length
 
     const encrypt = () => {
-        let result=""
-        
-        for (let i = 0; i < plainText.length; i++)
-        {
+        setChipher("")
+        for (let i = 0; i < plainText.length; i++){
             let element = plainText[i];
-            let resIndex = parseInt(ALPHA.indexOf(element.toUpperCase()))+parseInt(shift);
-            console.log(resIndex)
-            result += ALPHA[resIndex>25 ? resIndex%25 : resIndex]
+            if(element === " "){
+                setChipher(prev => prev += " ")
+            }else{
+                let elIndex = ALPHA.indexOf(element.toLocaleUpperCase())
+                let shiftedIndex = elIndex+shift
+                if(shiftedIndex > ALPHA_LENGTH){
+                    setChipher(prev => prev += ALPHA[(shiftedIndex - 1)-ALPHA_LENGTH])
+                }else {
+                    setChipher(prev => prev += ALPHA[shiftedIndex - 1])
+                }
+            }
             
         }
-        setChipher(result)
-
     }
 
     const decrypt = () => {
-        let result=""
-
-        for (let i = 0; i < chipher.length; i++)
-        {
+        setPlainText("")
+        for (let i = 0; i < chipher.length; i++){
             let element = chipher[i];
-            let resIndex = parseInt(ALPHA.indexOf(element.toUpperCase()))-parseInt(shift);
-            console.log(resIndex)
-            result += ALPHA[resIndex>25 ? resIndex%25 : resIndex]
-            
+            if(element === " "){
+                setPlainText(prev => prev += " ")
+            }else{
+                let elIndex = ALPHA.indexOf(element.toLocaleUpperCase())
+                let shiftedIndex = elIndex+1-shift
+                setPlainText(prev => prev += ALPHA[shiftedIndex])
+            }
         }
-        setPlainText(result)
     }
 
     return (
