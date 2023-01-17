@@ -13,7 +13,8 @@ import {
   Hill,
   Vigenere,
   Permutation, 
-  Substitution
+  Substitution,
+  Soon
 } from "./routes";
 
 const PageRoutes = () => {
@@ -29,6 +30,7 @@ const PageRoutes = () => {
             <Route path="hill" element={<Hill />} />
             <Route path="permutation" element={<Permutation />} />
             <Route path="vigenere" element={<Vigenere />} />
+            <Route path="soon" element={<Soon />} />
           </Route>
         </Routes>
       </BrowserRouter>

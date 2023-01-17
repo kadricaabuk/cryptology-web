@@ -13,9 +13,9 @@ const Navbar = () => {
   const [chipherRoutes, setChipherRoutes] = useState([
     { id: 0, name: 'Affine Chipher', href: 'affine', current: false},
     { id: 1, name: 'Ceasar Chipher', href: 'ceasar', current: false },
-    { id: 2, name: 'Permutation Chipher', href: 'permutation', current: false },
-    { id: 3, name: 'Substitution Chipher', href: 'substitution', current: false },
-    { id: 4, name: 'Vigenere Chipher', href: 'vigenere', current: false },
+    { id: 2, name: 'Permutation Chipher', href: 'permutation', current: false, isDisabled: true},
+    { id: 3, name: 'Substitution Chipher', href: 'substitution', current: false, isDisabled: true },
+    { id: 4, name: 'Vigenere Chipher', href: 'vigenere', current: false, isDisabled: true },
   ])
 
   return (

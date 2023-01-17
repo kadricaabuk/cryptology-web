@@ -6,3 +6,4 @@ export { default as Homepage } from "./Homepage";
 export { default as Permutation } from "./Permutation";
 export { default as Substitution } from "./Substitution";
 export { default as Vigenere } from "./Vigenere";
+export { default as Soon } from "./Soon";

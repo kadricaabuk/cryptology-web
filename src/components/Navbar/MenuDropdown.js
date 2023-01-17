@@ -19,7 +19,8 @@ const MenuDropdown = ({labelText, dropdownList, setDropdownList}) => {
   }, [isDropdownOpen]);
 
 
-  const updateState = ({id}) => {
+  const updateState = ({id, isDisabled}) => {
+    if(isDisabled) return;
     const newState = dropdownList.map(obj => {
       if (obj.id === id) {
         return {...obj, current: true};
@@ -31,8 +32,11 @@ const MenuDropdown = ({labelText, dropdownList, setDropdownList}) => {
 
   const MenuDropdownItem = ({item}) => {
     return (
-      <div className={`py-2 ${item.current ? "border-l-[6px] border-gray-800 pl-[10px]" : "pl-4"} pr-2 hover:bg-gray-800 hover:text-gray-200`} onClick={() => updateState(item)} style={{borderRadius: "0 5px 5px 0"}}>
-        <Link to={item.href}>{item.name}</Link>
+      <div
+      className={`py-2 ${item.current ? "border-l-[6px] border-gray-800 pl-[10px]" : "pl-4"} pr-2 hover:bg-gray-800 hover:text-gray-200`}
+      onClick={() => updateState(item)}
+      style={{borderRadius: "0 5px 5px 0"}}>
+        <Link to={!item.isDisabled ? item.href : '/soon'}>{item.name}</Link>
       </div>
     )
   }
@@ -43,7 +47,7 @@ const MenuDropdown = ({labelText, dropdownList, setDropdownList}) => {
     ref={dropdownContainer}
     onMouseEnter={() => setDropwdownOpen(true)}
     onMouseLeave={() => setDropwdownOpen(false)}
-    className="relative h-[30px]"
+    className="relative h-[30px] z-[9999]"
     >
       <button id="dropdownLabel" className="capitalize h-[30px] px-3 flex justify-center items-center font-medium rounded-md">{labelText}</button>
       <div id="dropdownCollapsable">
