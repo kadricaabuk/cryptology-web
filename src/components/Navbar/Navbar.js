@@ -22,7 +22,7 @@ const Navbar = () => {
     <nav className='bg-gray-800 text-white flex justify-start items-center flex-row gap-4 h-[60px]'>
       <img src={logo} alt="LOGO_MENU" className='h-[40px]'/>
       {navigation.map(tab => <NavbarItem key={tab.id} href={tab.href} label={tab.name}/>)}
-      <MenuDropdown labelText={'drop'} dropdownList={chipherRoutes} setDropdownList={setChipherRoutes}/>
+      <MenuDropdown labelText={'Chiphers'} dropdownList={chipherRoutes} setDropdownList={setChipherRoutes}/>
     </nav>
   )
 }

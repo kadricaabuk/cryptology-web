@@ -1,37 +1,34 @@
 import React from 'react'
 import logo from "../assets/logo-half.png";
+import phone from "../assets/PHONE.png";
+import phone2 from "../assets/PHONE2.png";
+import apiInfo from "../assets/api-intro.png";
 
 const About = () => {
   return (
-    <div className='w-full h-[400px] flex items-center justify-center mt-[200px]'>
+    <div className='w-full h-["fit-content"] flex items-center justify-center'>
       <div className="grid grid-cols-3 gap-4">
-        <div>
+        <div className='fixed'>
+          <img src={logo} alt="" width={400}/>
+        </div>
+        <div className='invisible'>
           <img src={logo} alt="" />
         </div>
-        <div className='col-span-2 pt-[60px]'>
+        <div className='col-span-2 pt-[60px] pl-[100px]'>
         <p className='text-white font-light text-xl'>
-          The <strong className='font-bold'>'Decypher Project'</strong>, prepared by the senior students of Hacettepe University, aims to provide information about Cryptology and Cryptology Methods.
+          The <strong className='font-bold'>'Decypher Project'</strong>, has born as a final project of the Cyrptology Introduction Course at Hacettepe University.<br/><br/>Nowadays, aiming to be a web bussines.
         </p>
+        <p className='text-white font-medium text-2xl my-[20px]'>Decypher Mobile</p>
+        <div className='flex flex-row gap-2'>
+          <img src={phone} alt="" width={100}/>
+          <img src={phone2} alt="" width={100}/>
+        </div>
+        <p className='text-white font-medium text-2xl my-[20px]'>Decypher API</p>
+        <div className='flex flex-row gap-2'>
+          <img src={apiInfo} alt="" width={300}/>
+        </div>
         
-        <h3 className='mt-12 text-white font-medium text-3xl mb-4'>Prepared By</h3>
-        <ul className=' list-disc text-white pl-3'>
-          <li>
-            <p className='text-white font-medium text-lg'>Sena Ermiş</p>
-            <p className='text-gray-400 font-medium text-base'>21937896</p>
-          </li>
-          <li>
-            <p className='text-white font-medium text-lg'>Özge Hamzaoğlu</p>
-            <p className='text-gray-400 font-medium text-base'>21937987</p>
-          </li>
-          <li>
-            <p className='text-white font-medium text-lg'>Enes Ergün</p>
-            <p className='text-gray-400 font-medium text-base'>21820817</p>
-          </li>
-          <li>
-            <p className='text-white font-medium text-lg'>Kadri Çabuk</p>
-            <p className='text-gray-400 font-medium text-base'>21520528</p>
-          </li>
-        </ul>
+        <p className='mt-12 text-white font-light text-xl mb-4'>Prepared By <strong className='font-medium'>Kadri Çabuk</strong></p>
         </div>
         
       </div>
